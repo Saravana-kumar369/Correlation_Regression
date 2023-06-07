@@ -20,10 +20,46 @@ If y represents the dependent variable and x the independent variable, this rela
 ![image](https://user-images.githubusercontent.com/104613195/168225866-ac8f6610-bdc3-4ac2-a24e-2b24ba08e189.png)
 
 # Program :
+```
+import numpy as np
+import math
+import matplotlib.pyplot as plt
 
-![image](https://github.com/ramjan1729/Correlation_Regression/assets/103921593/9eb48cbf-8ca3-4cd9-8440-ff45fd98333e)
+x = list(map(int, input().split()))
+y = list(map(int, input().split()))
+N = len(x)
 
+Sx = sum(x)
+Sy = sum(y)
+Sxy = sum(xi * yi for xi, yi in zip(x, y))
+Sx2 = sum(xi ** 2 for xi in x)
+Sy2 = sum(yi ** 2 for yi in y)
+
+r = (N * Sxy - Sx * Sy) / (math.sqrt(N * Sx2 - Sx ** 2) * math.sqrt(N * Sy2 - Sy ** 2))
+print("The Correlation coefficient is %.3f" % r)
+
+byx = (N * Sxy - Sx * Sy) / (N * Sx2 - Sx ** 2)
+xmean = Sx / N
+ymean = Sy / N
+print("The Regression line Y on X is: y = %.3f + %.3f (x - %.3f)" % (ymean, byx, xmean))
+
+plt.scatter(x, y)
+
+def Reg(x):
+    return ymean + byx * (x - xmean)
+
+x_vals = np.linspace(20, 80, 51)
+y_vals = Reg(x_vals)
+plt.plot(x_vals, y_vals, 'r')
+
+plt.xlabel('x-data')
+plt.ylabel('y-data')
+plt.legend(['Regression Line', 'Data points'])
+
+plt.show()
+```
+# Output 
+![Screenshot 2023-06-07 112405](https://github.com/Saravana-kumar369/Correlation_Regression/assets/117925254/9f291be8-677e-441c-8690-25abf2226e92)
 
 # Result
-
-# Output 
+The Correlation and regression for data analysis of objects from feeder using probability distribution are calculated.
