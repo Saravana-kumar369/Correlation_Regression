@@ -36,7 +36,7 @@ Sx2 = sum(xi ** 2 for xi in x)
 Sy2 = sum(yi ** 2 for yi in y)
 
 c= (N * Sxy - Sx * Sy) / (math.sqrt(N * Sx2 - Sx ** 2) * math.sqrt(N * Sy2 - Sy ** 2))
-print("The Correlation coefficient is %.3f" % r)
+print("The Correlation coefficient is %.3f" % c)
 
 byx = (N * Sxy - Sx * Sy) / (N * Sx2 - Sx ** 2)
 xmean = Sx / N
@@ -50,7 +50,7 @@ def Reg(x):
 
 x_vals = np.linspace(20, 80, 51)
 y_vals = Reg(x_vals)
-plt.plot(x_vals, y_vals, 'r')
+plt.plot(x_vals, y_vals, 'c')
 
 plt.xlabel('x-data')
 plt.ylabel('y-data')
