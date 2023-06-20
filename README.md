@@ -35,7 +35,7 @@ Sxy = sum(xi * yi for xi, yi in zip(x, y))
 Sx2 = sum(xi ** 2 for xi in x)
 Sy2 = sum(yi ** 2 for yi in y)
 
-r = (N * Sxy - Sx * Sy) / (math.sqrt(N * Sx2 - Sx ** 2) * math.sqrt(N * Sy2 - Sy ** 2))
+c= (N * Sxy - Sx * Sy) / (math.sqrt(N * Sx2 - Sx ** 2) * math.sqrt(N * Sy2 - Sy ** 2))
 print("The Correlation coefficient is %.3f" % r)
 
 byx = (N * Sxy - Sx * Sy) / (N * Sx2 - Sx ** 2)
